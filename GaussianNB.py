@@ -39,14 +39,7 @@ def maniplt_with_origin_data(data):
     le_Address = LabelEncoder()
     data['Address'] = le_Address.fit_transform(data['Address'])
 
-    # data['time'] = data['Hour'].apply(lambda x: 1 if (x >= 1 and x <= 7)
-    #                                             else 2 if (x >= 8 and x <= 15)
-    #                                             else 3)
-    # data['season'] = data['Month'].apply(lambda x: 1 if (x >= 3 and x <= 5)
-    #                                             else 2 if (x >= 6 and x <= 8)
-    #                                             else 3 if (x >= 9 and x <= 11)
-    #                                             else 4)
-
+    
     ## X, Y
     # data['X'] = data['X'].round(3)
     # data['Y'] = data['Y'].round(3)
@@ -61,11 +54,6 @@ le_Category = LabelEncoder()
 labels_train = le_Category.fit_transform(featuers_train['Category'])
 featuers_train.drop(['Category', 'Descript', 'Resolution','Dates'], axis=1, inplace=True)
 # featuers_train.drop(['Category', 'Descript', 'Resolution','Dates','Month','Hour'], axis=1, inplace=True)
-# sm = SMOTE(random_state=42)
-# featuers_train, labels_train = sm.fit_sample(featuers_train, labels_train)
-
-## Missing Values
-# print featuers_train.isnull().sum(axis=0)
 
 ## Normalization
 featuers_train = StandardScaler().fit_transform(featuers_train)
