@@ -41,8 +41,8 @@ def maniplt_with_origin_data(data):
 
     
     ## X, Y
-    data['X'] = data['X'].round(3)
-    data['Y'] = data['Y'].round(3)
+    #data['X'] = data['X'].round(3)
+    #data['Y'] = data['Y'].round(3)
     return data
 
 
